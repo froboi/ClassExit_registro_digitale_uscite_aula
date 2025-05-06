@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Classi</title>
+    <!-- <link rel="stylesheet" href="{{url for 'static', filename='style.css'}}"> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Gestione Classi</h1>
+        <form action="/add_or_access_class" method="post">
+            <label for="className">Nome della classe:</label>
+            <input type="text" id="className" name="class_name" placeholder="Es. 3A, 4B" required>
+            
+            <button type="submit">Accedi o Crea Classe</button>
+        </form>
+        <div class="info">
+            <p>Inserisci il nome di una classe per accedere o crearne una nuova.</p>
+            <p>Se la classe esiste già, verrai reindirizzato all'elenco degli studenti.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe {{ class_name }}</title>
+    <stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Classe {{ class_name }}</h1>
+        <h2>Elenco Studenti</h2>
+        <ul>
+            {% for student in students %}
+                <li>{{ student }}</li>
+            {% endfor %}
+        </ul>
+        <form action="/class/{{ class_name }}/add_student" method="post">
+            <label for="studentName">Nome dello studente:</label>
+            <input type="text" id="studentName" name="student_name" placeholder="Es. Mario Rossi" required>
+            <button type="submit">Aggiungi Studente</button>
+        </form>
+        <a href="/">Torna alla pagina principale</a>
+    </div>
+</body>
+</html>
