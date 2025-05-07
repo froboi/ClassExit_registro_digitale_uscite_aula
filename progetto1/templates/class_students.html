@@ -4,23 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classe {{ class_name }}</title>
-    <stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Classe {{ class_name }}</h1>
-        <h2>Elenco Studenti</h2>
-        <ul>
-            {% for student in students %}
-                <li>{{ student }}</li>
-            {% endfor %}
-        </ul>
+
         <form action="/class/{{ class_name }}/add_student" method="post">
             <label for="studentName">Nome dello studente:</label>
             <input type="text" id="studentName" name="student_name" placeholder="Es. Mario Rossi" required>
             <button type="submit">Aggiungi Studente</button>
         </form>
+
+        <h2>Elenco Studenti</h2>
+        <div class="student-buttons">
+            {% for student_obj in students %}
+                <button type="button" class="student-button" data-student-name="{{ student_obj.name }}">{{ student_obj.name }}</button>
+            {% endfor %}
+        </div>
+
+        <div id="timeModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Registra Orario per <span id="modalStudentName"></span></h2>
+                <form id="timeForm">
+                    <input type="hidden" id="currentStudentNameModal" name="student_name_for_modal">
+                    
+                    <label for="entryTime">Ora di Entrata:</label>
+                    <input type="time" id="entryTime" name="entry_time">
+
+                    <label for="exitTime">Ora di Uscita:</label>
+                    <input type="time" id="exitTime" name="exit_time">
+                    
+                    <button type="submit">Salva Orari</button>
+                </form>
+            </div>
+        </div>
+
         <a href="/">Torna alla pagina principale</a>
     </div>
+
+    <script>
+        const modal = document.getElementById('timeModal');
+        const modalStudentNameSpan = document.getElementById('modalStudentName');
+        const currentStudentNameInputModal = document.getElementById('currentStudentNameModal');
+        const entryTimeInput = document.getElementById('entryTime');
+        const exitTimeInput = document.getElementById('exitTime');
+        const closeButton = document.querySelector('.close-button');
+        const studentButtons = document.querySelectorAll('.student-button');
+        const timeForm = document.getElementById('timeForm');
+        const currentClassName = "{{ class_name }}";
+
+        studentButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const studentName = this.dataset.studentName;
+                modalStudentNameSpan.textContent = studentName;
+                currentStudentNameInputModal.value = studentName;
+                
+                entryTimeInput.value = '';
+                exitTimeInput.value = '';
+
+                modal.style.display = 'block';
+            });
+        });
+
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        timeForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const studentName = currentStudentNameInputModal.value;
+            const entryTime = entryTimeInput.value;
+            const exitTime = exitTimeInput.value;
+
+            if (!entryTime && !exitTime) {
+                alert("Devi inserire almeno l'ora di entrata o di uscita.");
+                return;
+            }
+
+            const payload = {
+                entry_time: entryTime || null,
+                exit_time: exitTime || null,
+            };
+            
+            fetch(`/class/${encodeURIComponent(currentClassName)}/student/${encodeURIComponent(studentName)}/record_time`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.status === 'success') {
+                    modal.style.display = 'none';
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Errore nel salvataggio degli orari. Controlla la console.');
+                modal.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
