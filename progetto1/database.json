@@ -1,1 +1,306 @@
-{"classes": {"1": {"name": "2b", "students": [{"name": "tommaso casale alloa", "records": [{"entry_time": "12:30"}]}, {"name": "marco corso", "records": []}]}}}
+{
+  "classes": {
+    "1": {
+      "name": "2b",
+      "students": [
+        {
+          "name": "tommaso casale alloa",
+          "records": [
+            {
+              "entry_time": "12:30"
+            }
+          ]
+        },
+        {
+          "name": "marco corso",
+          "records": []
+        }
+      ]
+    },
+    "2": {
+      "name": "3C SCIENZE",
+      "students": [
+        {
+          "name": "Studente 2-1",
+          "records": [
+            {
+              "entry_time": "08:15",
+              "exit_time": "09:05"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-2",
+          "records": [
+            {
+              "entry_time": "09:30",
+              "exit_time": "10:15"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-3",
+          "records": [
+            {
+              "entry_time": "10:00",
+              "exit_time": "11:45"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-4",
+          "records": [
+            {
+              "entry_time": "11:20",
+              "exit_time": "12:00"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-5",
+          "records": [
+            {
+              "entry_time": "08:50",
+              "exit_time": "09:55"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-6",
+          "records": [
+            {
+              "entry_time": "13:00",
+              "exit_time": "14:30"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-7",
+          "records": [
+            {
+              "entry_time": "14:10",
+              "exit_time": "15:00"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-8",
+          "records": [
+            {
+              "entry_time": "09:05",
+              "exit_time": "10:35"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-9",
+          "records": [
+            {
+              "entry_time": "12:15",
+              "exit_time": "13:55"
+            }
+          ]
+        },
+        {
+          "name": "Studente 2-10",
+          "records": [
+            {
+              "entry_time": "15:00",
+              "exit_time": "16:30"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "name": "4E LINGUE",
+      "students": [
+        {
+          "name": "Studente 3-1",
+          "records": [
+            {
+              "entry_time": "08:00",
+              "exit_time": "09:25"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-2",
+          "records": [
+            {
+              "entry_time": "09:45",
+              "exit_time": "10:30"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-3",
+          "records": [
+            {
+              "entry_time": "10:10",
+              "exit_time": "11:50"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-4",
+          "records": [
+            {
+              "entry_time": "11:35",
+              "exit_time": "12:15"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-5",
+          "records": [
+            {
+              "entry_time": "08:30",
+              "exit_time": "09:40"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-6",
+          "records": [
+            {
+              "entry_time": "13:15",
+              "exit_time": "14:40"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-7",
+          "records": [
+            {
+              "entry_time": "14:00",
+              "exit_time": "15:10"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-8",
+          "records": [
+            {
+              "entry_time": "09:20",
+              "exit_time": "10:55"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-9",
+          "records": [
+            {
+              "entry_time": "12:30",
+              "exit_time": "14:00"
+            }
+          ]
+        },
+        {
+          "name": "Studente 3-10",
+          "records": [
+            {
+              "entry_time": "16:00",
+              "exit_time": "16:45"
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "name": "5F ARTE",
+      "students": [
+        {
+          "name": "Studente 4-1",
+          "records": [
+            {
+              "entry_time": "08:20",
+              "exit_time": "09:10"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-2",
+          "records": [
+            {
+              "entry_time": "09:35",
+              "exit_time": "10:20"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-3",
+          "records": [
+            {
+              "entry_time": "10:05",
+              "exit_time": "11:30"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-4",
+          "records": [
+            {
+              "entry_time": "11:25",
+              "exit_time": "12:05"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-5",
+          "records": [
+            {
+              "entry_time": "08:55",
+              "exit_time": "09:50"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-6",
+          "records": [
+            {
+              "entry_time": "13:05",
+              "exit_time": "14:35"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-7",
+          "records": [
+            {
+              "entry_time": "14:15",
+              "exit_time": "15:05"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-8",
+          "records": [
+            {
+              "entry_time": "09:10",
+              "exit_time": "10:40"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-9",
+          "records": [
+            {
+              "entry_time": "12:20",
+              "exit_time": "13:50"
+            }
+          ]
+        },
+        {
+          "name": "Studente 4-10",
+          "records": [
+            {
+              "entry_time": "15:30",
+              "exit_time": "16:50"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
